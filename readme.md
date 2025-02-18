@@ -1,6 +1,6 @@
 # 🚀 Bitcoin Wallet Generator (BIP39 + BIP84 Bech32)
 
-Ce projet est une application web permettant de générer des wallets Bitcoin compatibles avec **BIP39** et **BIP84**, créant ainsi des adresses \*\*Bech32 (`bc1...`), plus sécurisées et modernes.
+Ce projet est une application web permettant de générer des wallets Bitcoin compatibles avec **BIP39** et **BIP84**, créant ainsi des adresses **Bech32** (`bc1...`), plus sécurisées et modernes.
 
 ## 📌 Fonctionnalités
 
@@ -10,8 +10,8 @@ Utiliser ce programme uniquement en local.
 ✅ Conversion de la phrase en **clé privée WIF** et adresse Bitcoin Bech32 (`bc1...`)
 <br>
 ✅ Affichage et **protection de la clé privée** (cliquable pour masquer/afficher)\
-✅ **Génération de QR codes\*\* pour la phrase mnémonique, l'adresse et la clé privée\
-✅ \*\*Interface web moderne et responsive\*\*
+✅ **Génération de QR codes** pour la phrase mnémonique, l'adresse et la clé privée\
+✅ **Interface web moderne et responsive**
 
 ## 🖥 Installation automatique
 
