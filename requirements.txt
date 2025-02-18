@@ -1,0 +1,6 @@
+flask
+ecdsa
+qrcode
+bip38
+base58
+bitcoin

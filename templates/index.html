@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Wallet Bitcoin</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>🚀 Générateur de Wallet Bitcoin</h1>
+        <p>Créez un wallet sécurisé avec option de protection par mot de passe.</p>
+
+        <form method="post">
+            <label for="password">Mot de passe (optionnel) 🔒 :</label>
+            <input type="password" id="password" name="password">
+            <button type="submit">Générer 🎉</button>
+        </form>
+
+        {% if address %}
+        <div class="wallet-info">
+            <h2>📝 Détails du Wallet</h2>
+            <p><strong>Adresse :</strong> {{ address }}</p>
+            <img src="{{ address_qr }}" alt="QR Code Adresse">
+
+            <p><strong>Clé Privée (WIF) :</strong> {{ wif_key }}</p>
+            <img src="{{ private_qr }}" alt="QR Code Clé Privée">
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>
