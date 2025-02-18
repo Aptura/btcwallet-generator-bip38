@@ -25,7 +25,7 @@ install.bat
 
 ## 🔧 Installation et utilisation manuelle
 
-### 1⃣ Prérequis
+### 1. Prérequis
 
 Avant de commencer, assurez-vous d'avoir installé :
 
@@ -33,7 +33,7 @@ Avant de commencer, assurez-vous d'avoir installé :
 - **pip** (normalement inclus avec Python)
 - **Git** (optionnel, mais recommandé pour cloner le projet)
 
-### 2⃣ Cloner le projet
+### 2. Cloner le projet
 
 Ouvrez un terminal (ou PowerShell sous Windows) et exécutez :
 
@@ -45,20 +45,20 @@ cd bitcoin_wallet_generator
 
 (Si vous n'avez pas Git, téléchargez le projet en ZIP depuis GitHub et extrayez-le)
 
-### 3⃣ Créer un environnement virtuel (optionnel mais recommandé)
+### 3. Créer un environnement virtuel (optionnel mais recommandé)
 
 ```bash
 python -m venv venv
 source venv/bin/activate  # Sur Windows : venv\Scripts\activate
 ```
 
-### 4⃣ Installer les dépendances
+### 4. Installer les dépendances
 
 ```bash
 pip install --no-cache-dir -r requirements.txt
 ```
 
-### 5⃣ Lancer l'application
+### 5. Lancer l'application
 
 ```bash
 python app.py
