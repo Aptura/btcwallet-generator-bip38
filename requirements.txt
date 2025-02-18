@@ -1,6 +1,8 @@
 flask
 ecdsa
 qrcode
-bip38
 base58
-bitcoin
+pillow
+mnemonic
+bip32utils
+bip-utils

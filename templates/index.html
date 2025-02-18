@@ -10,26 +10,46 @@
 
 <body>
     <div class="container">
-        <h1>🚀 Générateur de Wallet Bitcoin</h1>
-        <p>Créez un wallet sécurisé avec option de protection par mot de passe.</p>
-
-        <form method="post">
-            <label for="password">Mot de passe (optionnel) 🔒 :</label>
-            <input type="password" id="password" name="password">
-            <button type="submit">Générer 🎉</button>
+        <h1>Générateur de Wallet Bitcoin (BIP39 + Bech32)</h1>
+        <form method="POST">
+            <label for="passphrase">Passphrase (optionnel) :</label>
+            <input type="text" name="passphrase" id="passphrase" placeholder="Facultatif">
+            <button type="submit">Générer</button>
         </form>
+        {% if mnemonic %}
+        <div class="result">
+            <h2>Phrase Mnémonique :</h2>
+            <div class="inline-container">
+                <p class="mnemonic">{{ mnemonic }}</p>
+                <img src="{{ mnemonic_qr }}" alt="QR Code Mnemonic" class="qr-code">
+            </div>
 
-        {% if address %}
-        <div class="wallet-info">
-            <h2>📝 Détails du Wallet</h2>
-            <p><strong>Adresse :</strong> {{ address }}</p>
-            <img src="{{ address_qr }}" alt="QR Code Adresse">
+            <h2>Adresse Bitcoin :</h2>
+            <div class="inline-container">
+                <p class="address">{{ address }}</p>
+                <img src="{{ address_qr }}" alt="QR Code Adresse" class="qr-code">
+            </div>
 
-            <p><strong>Clé Privée (WIF) :</strong> {{ wif_key }}</p>
-            <img src="{{ private_qr }}" alt="QR Code Clé Privée">
+            <h2>Clé Privée :</h2>
+            <div class="inline-container">
+                <p class="private-key hidden" id="privateKey">{{ private_key }}</p>
+                <img src="{{ private_key_qr }}" alt="QR Code Clé Privée" class="qr-code">
+            </div>
+            <button onclick="togglePrivateKey()">Afficher / Cacher</button>
         </div>
         {% endif %}
     </div>
+
+    <script>
+        function togglePrivateKey() {
+            var key = document.getElementById("privateKey");
+            if (key.classList.contains("hidden")) {
+                key.classList.remove("hidden");
+            } else {
+                key.classList.add("hidden");
+            }
+        }
+    </script>
 </body>
 
 </html>
