@@ -114,6 +114,7 @@ pip install pillow
 ## 🤝 Contribution
 
 Vous pouvez proposer des améliorations en ouvrant une issue ou en faisant une pull request.
+
 Et pour faire une donation BTC : bc1qqjzdu6d7jw6zfl9aplgqpc3x2msjjrpj0spknl
 
 ## 📝 Licence
