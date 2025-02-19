@@ -27,10 +27,10 @@ def verify_address(mnemonic, passphrase, expected_address):
         "match": match
     }
 
-# Example usage with test values
-mnemonic_test = "zone custom next define truth expand version focus gentle immune dumb era kind fire tired uphold trust document pull kitchen decline clay raven menu"
+# Test values
+mnemonic_test = "zone custom next define truth expand version focus gentle immune dumb era kind fire tired uphold trust document pull kitchen decline clay raven menu" # Replace with your mnemonic 
 passphrase_test = ""
-expected_address_test = "bc1qfprx5kkkmalweumwfyeu0t8lwwntlzmp3vzp7r"  # Replace with your expected address
+expected_address_test = "bc1..................."  # Replace with your expected address
 
 result = verify_address(mnemonic_test, passphrase_test, expected_address_test)
 
