@@ -1,22 +1,22 @@
 from bip_utils import Bip39SeedGenerator, Bip84, Bip84Coins, Bip44Changes
 
 def verify_address(mnemonic, passphrase, expected_address):
-    """ Vérifie que l'adresse Bech32 générée correspond à la clé privée. """
+    """ Verifies that the generated Bech32 address matches the private key. """
 
-    # Génération de la seed depuis la phrase mnémonique
+    # Generate the seed from the mnemonic phrase
     seed = Bip39SeedGenerator(mnemonic).Generate(passphrase)
 
-    # Création de la structure BIP84 pour Bitcoin (SegWit Bech32)
+    # Create the BIP84 structure for Bitcoin (SegWit Bech32)
     bip84 = Bip84.FromSeed(seed, Bip84Coins.BITCOIN)
-    bip84_acc = bip84.Purpose().Coin().Account(0)  # Niveau compte
-    bip84_chg = bip84_acc.Change(Bip44Changes.CHAIN_EXT)  # Change 0 (externe)
-    bip84_addr = bip84_chg.AddressIndex(0)  # Première adresse
+    bip84_acc = bip84.Purpose().Coin().Account(0)  # Account level
+    bip84_chg = bip84_acc.Change(Bip44Changes.CHAIN_EXT)  # External change
+    bip84_addr = bip84_chg.AddressIndex(0)  # First address
 
-    # Récupération de l'adresse et de la clé privée
+    # Retrieve the address and private key
     generated_address = bip84_addr.PublicKey().ToAddress()
     private_key_wif = bip84_addr.PrivateKey().ToWif()
 
-    # Vérification de l'adresse
+    # Verify the address
     match = generated_address == expected_address
 
     return {
@@ -27,16 +27,16 @@ def verify_address(mnemonic, passphrase, expected_address):
         "match": match
     }
 
-# Exemple d'utilisation avec des valeurs test
+# Example usage with test values
 mnemonic_test = "zone custom next define truth expand version focus gentle immune dumb era kind fire tired uphold trust document pull kitchen decline clay raven menu"
 passphrase_test = ""
-expected_address_test = "bc1qfprx5kkkmalweumwfyeu0t8lwwntlzmp3vzp7r"  # Remplace avec l'adresse obtenue
+expected_address_test = "bc1qfprx5kkkmalweumwfyeu0t8lwwntlzmp3vzp7r"  # Replace with your expected address
 
 result = verify_address(mnemonic_test, passphrase_test, expected_address_test)
 
-# Affichage des résultats
-print("📜 Phrase Mnémonique : ", result["mnemonic"])
-print("🔑 Clé Privée (WIF) : ", result["private_key_wif"])
-print("🏦 Adresse Générée : ", result["generated_address"])
-print("🎯 Adresse Attendue : ", result["expected_address"])
-print("✅ Correspondance : ", "Oui" if result["match"] else "Non")
+# Display results
+print("📜 Mnemonic Phrase: ", result["mnemonic"])
+print("🔑 Private Key (WIF): ", result["private_key_wif"])
+print("🏦 Generated Address: ", result["generated_address"])
+print("🎯 Expected Address: ", result["expected_address"])
+print("✅ Match: ", "Yes" if result["match"] else "No")
