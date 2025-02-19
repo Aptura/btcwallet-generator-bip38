@@ -89,9 +89,9 @@ The script `verify_bech32.py` allows you to verify that a **Bech32 Bitcoin addre
 
 ### 🛠 How It Works
 
-1️⃣ It takes a **BIP39 mnemonic phrase** and an **optional passphrase**.
-2️⃣ It derives the **BIP84 (SegWit Bech32) private key and address**.
-3️⃣ It compares the generated address to the expected one.
+1️⃣ It takes a **BIP39 mnemonic phrase** and an **optional passphrase**. <br>
+2️⃣ It derives the **BIP84 (SegWit Bech32) private key and address**. <br>
+3️⃣ It compares the generated address to the expected one. <br>
 4️⃣ It returns whether they match.
 
 ### 🔹 Example Usage
